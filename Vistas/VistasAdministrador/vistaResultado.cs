@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuinielaSprint1.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +17,24 @@ namespace QuinielaSprint1.Vistas.VistasAdicionales
         {
             InitializeComponent();
         }
+
+        private void vistaResultado_Load(object sender, EventArgs e)
+        {
+            obtenerTablas datos = new obtenerTablas();
+            DataTable dataTable = datos.TablaPartidos();
+            dtListaUsuarios.DataSource = dataTable;
+
+            obtenerTablas datos1 = new obtenerTablas();
+            DataTable dataTable1 = datos.TablaResultadosConEquipos();
+            dtListaResultados.DataSource = dataTable1;
+
+        }
+
+        private void btnGenerarResultado_Click(object sender, EventArgs e)
+        {
+            ProcedimientosSql.InsertarResultado(txtResultado.Text, txtIdPartido.Text);
+        }
+
+    
     }
 }

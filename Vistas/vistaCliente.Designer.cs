@@ -39,6 +39,7 @@
             this.btnPuntos = new System.Windows.Forms.Button();
             this.btnPronostico = new System.Windows.Forms.Button();
             this.panelCentral = new System.Windows.Forms.Panel();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.BarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -50,6 +51,7 @@
             // BarraSuperior
             // 
             this.BarraSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(80)))), ((int)(((byte)(81)))));
+            this.BarraSuperior.Controls.Add(this.lblUsuario);
             this.BarraSuperior.Controls.Add(this.btnRestaurar);
             this.BarraSuperior.Controls.Add(this.btnMinimizar);
             this.BarraSuperior.Controls.Add(this.btnMaximizar);
@@ -129,13 +131,13 @@
             // 
             this.btnPartidos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPartidos.FlatAppearance.BorderSize = 0;
-            this.btnPartidos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(115)))));
+            this.btnPartidos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(80)))), ((int)(((byte)(81)))));
             this.btnPartidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPartidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPartidos.ForeColor = System.Drawing.Color.White;
             this.btnPartidos.Image = ((System.Drawing.Image)(resources.GetObject("btnPartidos.Image")));
             this.btnPartidos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPartidos.Location = new System.Drawing.Point(3, 266);
+            this.btnPartidos.Location = new System.Drawing.Point(3, 260);
             this.btnPartidos.Name = "btnPartidos";
             this.btnPartidos.Size = new System.Drawing.Size(239, 61);
             this.btnPartidos.TabIndex = 11;
@@ -147,7 +149,7 @@
             // 
             this.btnPuntos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPuntos.FlatAppearance.BorderSize = 0;
-            this.btnPuntos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(115)))));
+            this.btnPuntos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(80)))), ((int)(((byte)(81)))));
             this.btnPuntos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPuntos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPuntos.ForeColor = System.Drawing.Color.White;
@@ -165,7 +167,7 @@
             // 
             this.btnPronostico.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPronostico.FlatAppearance.BorderSize = 0;
-            this.btnPronostico.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(115)))));
+            this.btnPronostico.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(80)))), ((int)(((byte)(81)))));
             this.btnPronostico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPronostico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPronostico.ForeColor = System.Drawing.Color.White;
@@ -188,6 +190,17 @@
             this.panelCentral.Size = new System.Drawing.Size(1058, 612);
             this.panelCentral.TabIndex = 4;
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lblUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblUsuario.Location = new System.Drawing.Point(12, 7);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(14, 20);
+            this.lblUsuario.TabIndex = 4;
+            this.lblUsuario.Text = ".";
+            // 
             // vistaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,7 +213,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "vistaCliente";
             this.Text = "vistaCliente";
+            this.Load += new System.EventHandler(this.vistaCliente_Load);
             this.BarraSuperior.ResumeLayout(false);
+            this.BarraSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
@@ -222,5 +237,6 @@
         public System.Windows.Forms.Button btnPronostico;
         public System.Windows.Forms.Button btnPuntos;
         public System.Windows.Forms.Button btnPartidos;
+        private System.Windows.Forms.Label lblUsuario;
     }
 }

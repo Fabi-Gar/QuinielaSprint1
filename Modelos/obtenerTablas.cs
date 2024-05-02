@@ -21,7 +21,115 @@ namespace QuinielaSprint1.Modelos
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "listaUsuarios";
+                cmd.CommandText = "MostrarUsuarios";
+                cmd.Connection = Miconexion.conexion;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                adapter.Fill(tablaCuentas);
+                Miconexion.conexion.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Algo salió mal: " + ex.Message);
+            }
+
+            return tablaCuentas;
+
+        }
+
+        public DataTable TablaPartidos()
+        {
+            DataTable tablaCuentas = new DataTable();
+            try
+            {
+                Miconexion.abrir_conexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "MostrarTodosLosPartidos";
+                cmd.Connection = Miconexion.conexion;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                adapter.Fill(tablaCuentas);
+                Miconexion.conexion.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Algo salió mal: " + ex.Message);
+            }
+
+            return tablaCuentas;
+
+        }
+
+        public DataTable TablaEquipos()
+        {
+            DataTable tablaCuentas = new DataTable();
+            try
+            {
+                Miconexion.abrir_conexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "MostrarEquipos";
+                cmd.Connection = Miconexion.conexion;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                adapter.Fill(tablaCuentas);
+                Miconexion.conexion.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Algo salió mal: " + ex.Message);
+            }
+
+            return tablaCuentas;
+
+        }
+
+        
+
+        public DataTable TablaResultadosConEquipos()
+        {
+            DataTable tablaCuentas = new DataTable();
+            try
+            {
+                Miconexion.abrir_conexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "MostrarResultadosConPartidos";
+                cmd.Connection = Miconexion.conexion;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                adapter.Fill(tablaCuentas);
+                Miconexion.conexion.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Algo salió mal: " + ex.Message);
+            }
+
+            return tablaCuentas;
+
+        }
+
+        
+
+        public DataTable TablaTodosLosPronosticos()
+        {
+            DataTable tablaCuentas = new DataTable();
+            try
+            {
+                Miconexion.abrir_conexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "MostrarPronosticos";
                 cmd.Connection = Miconexion.conexion;
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);

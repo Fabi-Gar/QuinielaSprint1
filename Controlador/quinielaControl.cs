@@ -67,7 +67,10 @@ namespace QuinielaSprint1.Controlador
             //Vista Login
             vistaLogin.btnIniciarSesion.Click += clickBoton;
             vistaLogin.btnCrearCuenta.Click += clickBoton;
-            vistaLogin.Show();
+            //vistaLogin.Show();
+            vistaAdministrador.Show();
+
+            //vistaPronosticosUsuario.Show();
 
             //Vista Administrador
             vistaAdministrador.btnAgregarEquipo.Click += clickBoton;
@@ -75,11 +78,16 @@ namespace QuinielaSprint1.Controlador
             vistaAdministrador.btnPronostico.Click += clickBoton;
             vistaAdministrador.btnResultado.Click += clickBoton;
             vistaAdministrador.btnUsuariosRegistrados.Click += clickBoton;
-            
+
+            //Vista Cliente
+            vistaCliente.btnPartidos.Click += clickBoton;
+            vistaCliente.btnPronostico.Click += clickBoton;
+            vistaCliente.btnPuntos.Click += clickBoton;
+
 
         }
 
-        private void AbrirForm(object formHeredado)
+        private void AbrirFormAdmin(object formHeredado)
         {
             if (vistaAdministrador.panelCentral.Controls.Count > 0) vistaAdministrador.panelCentral.Controls.RemoveAt(0);
             Form fr = formHeredado as Form;
@@ -87,6 +95,17 @@ namespace QuinielaSprint1.Controlador
             fr.Dock = DockStyle.Fill;
             vistaAdministrador.panelCentral.Controls.Add(fr);
             vistaAdministrador.panelCentral.Tag = fr;
+            fr.Show();
+        }
+
+        private void AbrirFormCliente(object formHeredado)
+        {
+            if (vistaCliente.panelCentral.Controls.Count > 0) vistaCliente.panelCentral.Controls.RemoveAt(0);
+            Form fr = formHeredado as Form;
+            fr.TopLevel = false;
+            fr.Dock = DockStyle.Fill;
+            vistaCliente.panelCentral.Controls.Add(fr);
+            vistaCliente.panelCentral.Tag = fr;
             fr.Show();
         }
 
@@ -114,7 +133,7 @@ namespace QuinielaSprint1.Controlador
                         if (Conexiones.Miconexion.ObtenerRol(vistaLogin.txtUsuario.Text) == "admin")
                         { vistaAdministrador.ShowDialog(); }
 
-                        else if (Conexiones.Miconexion.ObtenerRol(vistaLogin.txtUsuario.Text) == "Tecnico")
+                        else if (Conexiones.Miconexion.ObtenerRol(vistaLogin.txtUsuario.Text) == "cliente")
                         { vistaCliente.ShowDialog(); }
 
                         else
@@ -130,24 +149,37 @@ namespace QuinielaSprint1.Controlador
             //Control de forms vista administrador
             if (sender == vistaAdministrador.btnAgregarEquipo)
             {
-                AbrirForm(new vistaAgregarEquipo());
+                AbrirFormAdmin(new vistaAgregarEquipo());
             }
-
             if (sender == vistaAdministrador.btnAgregarPartido)
-            { AbrirForm(new vistaAgregarPartido()); }
+            { AbrirFormAdmin(new vistaAgregarPartido()); }
 
             if (sender == vistaAdministrador.btnPronostico)
-            { AbrirForm(new vistaPronosticoAdmin()); }
+            { AbrirFormAdmin(new vistaPronosticoAdmin()); }
 
             if (sender == vistaAdministrador.btnResultado)
-            { AbrirForm(new vistaResultado()); }
+            { AbrirFormAdmin(new vistaResultado()); }
 
             if (sender == vistaAdministrador.btnUsuariosRegistrados)
-            { 
-                AbrirForm(new vistaListaUsuarios());
-                
+            { AbrirFormAdmin(new vistaListaUsuarios()); }
 
-            }
+            //Control de forms vista cliente
+            if (sender == vistaCliente.btnPartidos) 
+            { AbrirFormCliente(new vistaPartidosUsuario()); }
+
+            if (sender == vistaCliente.btnPronostico) 
+            { AbrirFormCliente(new vistaPronosticosUsuario()); }
+
+            if(sender == vistaCliente.btnPuntos) 
+            { AbrirFormCliente(new vistaMisPuntosUsuario()); }
+
+
+        
+            
+
+
+
+            
         }
     }
 }

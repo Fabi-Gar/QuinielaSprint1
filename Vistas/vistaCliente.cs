@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuinielaSprint1.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace QuinielaSprint1.Vistas
 {
@@ -39,6 +41,12 @@ namespace QuinielaSprint1.Vistas
             btnMaximizar.Visible = true;
         }
 
-        
+        private void vistaCliente_Load(object sender, EventArgs e)
+        {
+            string[] resultados = ProcedimientosSql.ObtenerId(Conexiones.Miconexion.user);
+            string nombreUsuario = resultados[0];
+            MessageBox.Show(nombreUsuario);
+
+        }
     }
 }

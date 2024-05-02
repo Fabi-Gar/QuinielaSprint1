@@ -192,8 +192,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Imagenes\AgregarEquipoIcono.png" />
+    <Content Include="Imagenes\AgregarPartidoIcono.png" />
     <Content Include="Imagenes\iconoAplicacion.ico" />
     <Content Include="Imagenes\LogoPrincipal.png" />
+    <Content Include="Imagenes\PronosticoIcono.png" />
+    <Content Include="Imagenes\ResultadoIcono.png" />
+    <Content Include="Imagenes\UsuarioIcono.png" />
     <None Include="Resources\CalendarioIconoBlanco.png" />
     <None Include="Resources\CalendarioIcono.png" />
   </ItemGroup>

@@ -87,7 +87,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtListaUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtListaUsuarios.RowHeadersVisible = false;
-            this.dtListaUsuarios.Size = new System.Drawing.Size(471, 556);
+            this.dtListaUsuarios.Size = new System.Drawing.Size(471, 76);
             this.dtListaUsuarios.TabIndex = 5;
             // 
             // label2
@@ -95,7 +95,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(575, 21);
+            this.label2.Location = new System.Drawing.Point(12, 247);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 20);
             this.label2.TabIndex = 8;
@@ -123,7 +123,7 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(216)))), ((int)(((byte)(227)))));
-            this.dataGridView1.Location = new System.Drawing.Point(575, 44);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 270);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -135,7 +135,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(471, 556);
+            this.dataGridView1.Size = new System.Drawing.Size(1030, 330);
             this.dataGridView1.TabIndex = 7;
             // 
             // vistaMisPuntosUsuario

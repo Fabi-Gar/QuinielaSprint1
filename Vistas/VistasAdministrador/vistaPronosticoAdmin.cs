@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuinielaSprint1.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace QuinielaSprint1.Vistas.VistasAdicionales
         public vistaPronosticoAdmin()
         {
             InitializeComponent();
+        }
+
+        private void vistaPronosticoAdmin_Load(object sender, EventArgs e)
+        {
+            obtenerTablas datos = new obtenerTablas();
+            DataTable dataTable = datos.TablaTodosLosPronosticos();
+            dtPronosticos.DataSource = dataTable;
         }
     }
 }

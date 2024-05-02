@@ -15,15 +15,15 @@ namespace QuinielaSprint1.Modelos
             public static SqlConnection conexion;
 
             //Estas variables son cambiadas por el login al ser incorrectas no se hace la conexion
-            public static String user;
-            public static String pass;
+            public static String user = "sa";
+            public static String pass = "Qq58905326Aa.";
 
             public static void abrir_conexion()
             {
                 try
                 {
                     //Este es el nombre de conexion para conectar a la base de datos
-                    conexion = new SqlConnection("Data Source=34.16.213.5; Initial Catalog =Quiniela; Persist Security Info = True; User ID = " + user + "; Password = " + pass + "; TrustServerCertificate = True");
+                    conexion = new SqlConnection("Data Source=34.16.213.5; Initial Catalog =QuinielaEntrega; Persist Security Info = True; User ID = " + user + "; Password = " + pass + "; TrustServerCertificate = True");
 
                     //Este if cambia el estado de conexion cerrada a abierta
                     if (conexion.State == System.Data.ConnectionState.Closed)
@@ -68,33 +68,6 @@ namespace QuinielaSprint1.Modelos
                 finally { cmd.Dispose(); }
 
                 return rolUsuario;
-            }
-
-            public static string ObtenerId(string usuario)
-            {
-                string idUsuario = "";
-                SqlCommand cmd = new SqlCommand();
-
-                try
-                {
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.CommandText = "obtenerId";
-                    cmd.Connection = Miconexion.conexion;
-
-                    cmd.Parameters.Add(new SqlParameter("@nomUsuario", usuario));
-
-                    SqlDataReader rs = cmd.ExecuteReader();
-                    if (rs.HasRows)
-                    {
-                        rs.Read();
-                        idUsuario = rs.GetString(0);
-                    }
-                }
-                catch (Exception ex) { Console.Write(ex); }
-
-                finally { cmd.Dispose(); }
-
-                return idUsuario;
             }
 
         }
