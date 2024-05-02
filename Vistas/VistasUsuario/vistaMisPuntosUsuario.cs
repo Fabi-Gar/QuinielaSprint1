@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuinielaSprint1
+namespace QuinielaSprint1.Vistas.VistasUsuario
 {
-    public partial class Login : Form
+    public partial class vistaMisPuntosUsuario : Form
     {
-        public Login()
+        public vistaMisPuntosUsuario()
         {
             InitializeComponent();
-        }
-
-        private void btnSalir_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
-
         }
     }
 }

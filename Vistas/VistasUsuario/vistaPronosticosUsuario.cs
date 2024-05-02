@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuinielaSprint1.Vistas.VistasModifiaciones
+namespace QuinielaSprint1.Vistas.VistasUsuario
 {
-    public partial class DATAGRIDALEX : Form
+    public partial class vistaPronosticosUsuario : Form
     {
-        public DATAGRIDALEX()
+        public vistaPronosticosUsuario()
         {
             InitializeComponent();
         }
