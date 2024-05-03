@@ -15,8 +15,8 @@ namespace QuinielaSprint1.Modelos
             public static SqlConnection conexion;
 
             //Estas variables son cambiadas por el login al ser incorrectas no se hace la conexion
-            public static String user = "sa";
-            public static String pass = "Qq58905326Aa.";
+            public static String user;
+            public static String pass;
 
             public static void abrir_conexion()
             {

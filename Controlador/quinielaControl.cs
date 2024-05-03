@@ -67,8 +67,8 @@ namespace QuinielaSprint1.Controlador
             //Vista Login
             vistaLogin.btnIniciarSesion.Click += clickBoton;
             vistaLogin.btnCrearCuenta.Click += clickBoton;
-            //vistaLogin.Show();
-            vistaAdministrador.Show();
+            vistaLogin.Show();
+          
 
             //vistaPronosticosUsuario.Show();
 
@@ -115,6 +115,15 @@ namespace QuinielaSprint1.Controlador
         private void clickBoton(object sender, EventArgs e)
         {
 
+            if(sender == vistaLogin.btnCrearCuenta)
+            {
+                if (vistaCrearUsuario.IsDisposed)
+                {
+                    new vistaCrearUsuario();
+                }
+                vistaCrearUsuario.ShowDialog();
+            }
+
             // Inicia Sesion y muestra la ventana segun el rol del usuario
             if (sender == vistaLogin.btnIniciarSesion)
             {
@@ -130,14 +139,19 @@ namespace QuinielaSprint1.Controlador
                     vistaLogin.Hide();
                     if (estadoCOnexion == System.Data.ConnectionState.Open)
                     {
-                        if (Conexiones.Miconexion.ObtenerRol(vistaLogin.txtUsuario.Text) == "admin")
-                        { vistaAdministrador.ShowDialog(); }
+                       
+     
 
-                        else if (Conexiones.Miconexion.ObtenerRol(vistaLogin.txtUsuario.Text) == "cliente")
+                        if (Conexiones.Miconexion.ObtenerRol(vistaLogin.txtUsuario.Text) == "admin")
+                             { vistaAdministrador.ShowDialog(); }
+                            
+                        else if (Conexiones.Miconexion.ObtenerRol(vistaLogin.txtUsuario.Text) == "Cliente")
                         { vistaCliente.ShowDialog(); }
 
+
+
                         else
-                        { MessageBox.Show("El usuario no existe"); }
+                        { vistaCliente.ShowDialog(); }
                     }
                     else
                     {

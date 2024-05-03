@@ -55,5 +55,10 @@ namespace QuinielaSprint1
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void BarraSuperior_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

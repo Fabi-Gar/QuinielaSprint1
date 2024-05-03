@@ -13,40 +13,7 @@ namespace QuinielaSprint1.Modelos
     internal class ProcedimientosSql
     {
 
-        public static string[] ObtenerId(string usuario)
-        {
-            string[] resultados = new string[2]; // Array para almacenar los resultados
-
-            SqlCommand cmd = new SqlCommand();
-
-            try
-            {
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "obtenerId";
-                cmd.Connection = Miconexion.conexion;
-
-                cmd.Parameters.Add(new SqlParameter("@nomUsuario", usuario));
-
-                SqlDataReader rs = cmd.ExecuteReader();
-                if (rs.HasRows)
-                {
-                    rs.Read();
-                    resultados[0] = rs.GetString(0); // Almacenar el ID de usuario
-                    resultados[1] = rs.GetString(1); // Almacenar el nombre de usuario
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex); // Imprimir el error en la consola
-            }
-            finally
-            {
-                cmd.Dispose();
-            }
-
-            return resultados;
-        }
-
+        
         public static void AgregarEquipo(string nomEquipo)
         {
             try
@@ -119,11 +86,6 @@ namespace QuinielaSprint1.Modelos
             {
                 MessageBox.Show("Error al insertar resultado: " + ex.Message);
             }
-
         }
-
-        
-
-
     }
 }

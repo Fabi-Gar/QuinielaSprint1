@@ -43,9 +43,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(8, 31);
+            this.label1.Location = new System.Drawing.Point(11, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 20);
+            this.label1.Size = new System.Drawing.Size(181, 25);
             this.label1.TabIndex = 6;
             this.label1.Text = "Nombre de equipo";
             // 
@@ -55,10 +56,11 @@
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.txtUsuario.ForeColor = System.Drawing.Color.White;
-            this.txtUsuario.Location = new System.Drawing.Point(12, 54);
+            this.txtUsuario.Location = new System.Drawing.Point(16, 66);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(243, 33);
+            this.txtUsuario.Size = new System.Drawing.Size(324, 41);
             this.txtUsuario.TabIndex = 5;
             // 
             // btnAgregarEquipo
@@ -72,9 +74,10 @@
             this.btnAgregarEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarEquipo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarEquipo.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarEquipo.Location = new System.Drawing.Point(319, 54);
+            this.btnAgregarEquipo.Location = new System.Drawing.Point(425, 66);
+            this.btnAgregarEquipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregarEquipo.Name = "btnAgregarEquipo";
-            this.btnAgregarEquipo.Size = new System.Drawing.Size(215, 40);
+            this.btnAgregarEquipo.Size = new System.Drawing.Size(287, 49);
             this.btnAgregarEquipo.TabIndex = 11;
             this.btnAgregarEquipo.Text = "Agregar Equipo";
             this.btnAgregarEquipo.TextColor = System.Drawing.Color.White;
@@ -105,7 +108,8 @@
             this.dtEquipos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtEquipos.EnableHeadersVisualStyles = false;
             this.dtEquipos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(216)))), ((int)(((byte)(227)))));
-            this.dtEquipos.Location = new System.Drawing.Point(12, 128);
+            this.dtEquipos.Location = new System.Drawing.Point(16, 158);
+            this.dtEquipos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtEquipos.Name = "dtEquipos";
             this.dtEquipos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -118,20 +122,21 @@
             this.dtEquipos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtEquipos.RowHeadersVisible = false;
             this.dtEquipos.RowHeadersWidth = 1030;
-            this.dtEquipos.Size = new System.Drawing.Size(522, 472);
+            this.dtEquipos.Size = new System.Drawing.Size(696, 581);
             this.dtEquipos.TabIndex = 33;
             // 
             // vistaAgregarEquipo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1058, 612);
+            this.ClientSize = new System.Drawing.Size(1411, 753);
             this.Controls.Add(this.dtEquipos);
             this.Controls.Add(this.btnAgregarEquipo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "vistaAgregarEquipo";
             this.Text = "vistaAgregarEquipo";
             this.Load += new System.EventHandler(this.vistaAgregarEquipo_Load);

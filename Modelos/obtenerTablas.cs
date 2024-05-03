@@ -145,5 +145,31 @@ namespace QuinielaSprint1.Modelos
             return tablaCuentas;
 
         }
+
+        public DataTable TablaPartidosConId()
+        {
+            DataTable tablaCuentas = new DataTable();
+            try
+            {
+                Miconexion.abrir_conexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "MostrarDatosPartidoConId";
+                cmd.Connection = Miconexion.conexion;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                adapter.Fill(tablaCuentas);
+                Miconexion.conexion.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Algo salió mal: " + ex.Message);
+            }
+
+            return tablaCuentas;
+
+        }
     }
 }
