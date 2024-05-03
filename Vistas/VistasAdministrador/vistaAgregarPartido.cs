@@ -25,7 +25,7 @@ namespace QuinielaSprint1.Vistas.VistasAdicionales
             dtEquipos.DataSource = dataTable;
 
             obtenerTablas datos1 = new obtenerTablas();
-            DataTable dataTable1 = datos1.TablaPartidos();
+            DataTable dataTable1 = datos1.TablaPartidosConId();
             dtPartidos.DataSource = dataTable1;
         }
 
@@ -33,7 +33,7 @@ namespace QuinielaSprint1.Vistas.VistasAdicionales
         {
             ProcedimientosSql.AgregarPartido(fechaUsuario.Value, txtIdLocal.Text, txtIdVisitante.Text);
             obtenerTablas datos1 = new obtenerTablas();
-            DataTable dataTable1 = datos1.TablaPartidos();
+            DataTable dataTable1 = datos1.TablaPartidosConId();
             dtPartidos.DataSource = dataTable1;
         }
     }

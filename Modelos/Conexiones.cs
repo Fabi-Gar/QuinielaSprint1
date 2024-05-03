@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 using System.Windows.Forms;
+using System.Data;
 
 namespace QuinielaSprint1.Modelos
 {
@@ -14,19 +12,14 @@ namespace QuinielaSprint1.Modelos
         {
             public static SqlConnection conexion;
 
-            //Estas variables son cambiadas por el login al ser incorrectas no se hace la conexion
-            public static String user = "sa";
-            public static String pass = "Qq58905326Aa.";
-
             public static void abrir_conexion()
             {
                 try
                 {
-                    //Este es el nombre de conexion para conectar a la base de datos
-                    conexion = new SqlConnection("Data Source=34.16.213.5; Initial Catalog =QuinielaEntrega; Persist Security Info = True; User ID = " + user + "; Password = " + pass + "; TrustServerCertificate = True");
+                    string connectionString = ConfigurationManager.ConnectionStrings["ConexionBaseDatos"].ConnectionString;
+                    conexion = new SqlConnection(connectionString);
 
-                    //Este if cambia el estado de conexion cerrada a abierta
-                    if (conexion.State == System.Data.ConnectionState.Closed)
+                    if (conexion.State == ConnectionState.Closed)
                     {
                         conexion.Open();
                     }
@@ -35,41 +28,46 @@ namespace QuinielaSprint1.Modelos
                 catch (Exception ex) { MessageBox.Show("error " + ex); }
             }
 
-
-            //Con este metodo se obtiene el estado de la conexion
-            public static System.Data.ConnectionState ObtenerEstadoConexion()
+            public static ConnectionState ObtenerEstadoConexion()
             {
                 return conexion.State;
             }
 
-            //se obtiene el rol del usuario
-            public static string ObtenerRol(string usuario)
+            public static string Log_in(string nombreUsuario, string contraseña)
             {
                 string rolUsuario = "";
-                SqlCommand cmd = new SqlCommand();
 
                 try
                 {
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.CommandText = "buscarRol";
-                    cmd.Connection = Miconexion.conexion;
+                    abrir_conexion();
 
-                    cmd.Parameters.Add(new SqlParameter("@nomUsuario", usuario));
+                    SqlCommand cmd = new SqlCommand("ValidarUsuario", conexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                    SqlDataReader rs = cmd.ExecuteReader();
-                    if (rs.HasRows)
+                    cmd.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
+                    cmd.Parameters.AddWithValue("@Contrasena", contraseña);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
                     {
-                        rs.Read();
-                        rolUsuario = rs.GetString(0);
+                        rolUsuario = reader["Rol"].ToString();
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                finally
+                {
+                    if (conexion.State == ConnectionState.Open)
+                    {
+                        conexion.Close();
                     }
                 }
-                catch (Exception ex) { Console.Write(ex); }
-
-                finally { cmd.Dispose(); }
 
                 return rolUsuario;
             }
-
         }
     }
 }

@@ -67,8 +67,8 @@ namespace QuinielaSprint1.Controlador
             //Vista Login
             vistaLogin.btnIniciarSesion.Click += clickBoton;
             vistaLogin.btnCrearCuenta.Click += clickBoton;
-            //vistaLogin.Show();
-            vistaAdministrador.Show();
+            vistaLogin.Show();
+          
 
             //vistaPronosticosUsuario.Show();
 
@@ -115,35 +115,50 @@ namespace QuinielaSprint1.Controlador
         private void clickBoton(object sender, EventArgs e)
         {
 
+            if(sender == vistaLogin.btnCrearCuenta)
+            {
+                if (vistaCrearUsuario.IsDisposed)
+                {
+                    new vistaCrearUsuario();
+                }
+                vistaCrearUsuario.ShowDialog();
+            }
+
             // Inicia Sesion y muestra la ventana segun el rol del usuario
             if (sender == vistaLogin.btnIniciarSesion)
             {
-                if (sender == vistaLogin.btnIniciarSesion)
+                Conexiones.Miconexion.abrir_conexion();
+                System.Data.ConnectionState estadoConexion = Conexiones.Miconexion.ObtenerEstadoConexion();
+
+                vistaLogin.Hide();
+
+                if (estadoConexion == System.Data.ConnectionState.Open)
                 {
-                    Conexiones.Miconexion.user = vistaLogin.txtUsuario.Text;
-                    Conexiones.Miconexion.pass = vistaLogin.txtContraseña.Text;
-                    Conexiones.Miconexion.abrir_conexion();
+                    logicaDeNegocios.DatosUsuario.Usuario = vistaLogin.txtUsuario.Text;
+                    procedimientosAlmacenados.ObtenerIdUsuario(vistaLogin.txtUsuario.Text, vistaLogin.txtUsuario.Text);
+                   
+                    logicaDeNegocios.DatosUsuario.Rol = Conexiones.Miconexion.Log_in(vistaLogin.txtUsuario.Text, vistaLogin.txtContraseña.Text);
 
-                    System.Data.ConnectionState estadoCOnexion = Conexiones.Miconexion.ObtenerEstadoConexion();
 
-
-                    vistaLogin.Hide();
-                    if (estadoCOnexion == System.Data.ConnectionState.Open)
+                    if (logicaDeNegocios.DatosUsuario.Rol == "Admin")
                     {
-                        if (Conexiones.Miconexion.ObtenerRol(vistaLogin.txtUsuario.Text) == "admin")
-                        { vistaAdministrador.ShowDialog(); }
-
-                        else if (Conexiones.Miconexion.ObtenerRol(vistaLogin.txtUsuario.Text) == "cliente")
-                        { vistaCliente.ShowDialog(); }
-
-                        else
-                        { MessageBox.Show("El usuario no existe"); }
+                        vistaAdministrador.ShowDialog();
+                    }
+                    else if (logicaDeNegocios.DatosUsuario.Rol == "Usuario")
+                    {
+                        vistaCliente.ShowDialog();
                     }
                     else
                     {
-                        Application.Exit();
+                        MessageBox.Show("Usuario o Contraseña Incorrectos");
+                        vistaLogin.Show();
                     }
                 }
+                else
+                {
+                    Application.Exit();
+                }
+            
             }
 
             //Control de forms vista administrador

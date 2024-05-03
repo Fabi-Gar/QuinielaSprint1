@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(vistaCliente));
             this.BarraSuperior = new System.Windows.Forms.Panel();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
@@ -39,7 +40,6 @@
             this.btnPuntos = new System.Windows.Forms.Button();
             this.btnPronostico = new System.Windows.Forms.Button();
             this.panelCentral = new System.Windows.Forms.Panel();
-            this.lblUsuario = new System.Windows.Forms.Label();
             this.BarraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -61,6 +61,18 @@
             this.BarraSuperior.Name = "BarraSuperior";
             this.BarraSuperior.Size = new System.Drawing.Size(1300, 38);
             this.BarraSuperior.TabIndex = 2;
+            this.BarraSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraSuperior_MouseDown);
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblUsuario.Location = new System.Drawing.Point(12, 7);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(94, 26);
+            this.lblUsuario.TabIndex = 4;
+            this.lblUsuario.Text = "Usuario";
             // 
             // btnRestaurar
             // 
@@ -184,22 +196,10 @@
             // panelCentral
             // 
             this.panelCentral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCentral.Location = new System.Drawing.Point(242, 38);
             this.panelCentral.Name = "panelCentral";
             this.panelCentral.Size = new System.Drawing.Size(1058, 612);
             this.panelCentral.TabIndex = 4;
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblUsuario.Location = new System.Drawing.Point(12, 7);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(14, 20);
-            this.lblUsuario.TabIndex = 4;
-            this.lblUsuario.Text = ".";
             // 
             // vistaCliente
             // 
@@ -212,6 +212,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "vistaCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "vistaCliente";
             this.Load += new System.EventHandler(this.vistaCliente_Load);
             this.BarraSuperior.ResumeLayout(false);

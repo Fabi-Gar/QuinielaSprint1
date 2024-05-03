@@ -12,39 +12,76 @@ namespace QuinielaSprint1.Modelos
 {
     internal class ProcedimientosSql
     {
-
-        public static string[] ObtenerId(string usuario)
+        public string ObtenerNombreUsuario(string nombreUsuario, string contraseña)
         {
-            string[] resultados = new string[2]; // Array para almacenar los resultados
-
-            SqlCommand cmd = new SqlCommand();
+            string nombre = "";
 
             try
             {
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "obtenerId";
-                cmd.Connection = Miconexion.conexion;
+                Miconexion.abrir_conexion();
 
-                cmd.Parameters.Add(new SqlParameter("@nomUsuario", usuario));
+                SqlCommand cmd = new SqlCommand("ObtenerNombreUsuario", Miconexion.conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-                SqlDataReader rs = cmd.ExecuteReader();
-                if (rs.HasRows)
+                cmd.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
+                cmd.Parameters.AddWithValue("@Contrasena", contraseña);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
                 {
-                    rs.Read();
-                    resultados[0] = rs.GetString(0); // Almacenar el ID de usuario
-                    resultados[1] = rs.GetString(1); // Almacenar el nombre de usuario
+                    nombre = reader["Usuario"].ToString();
                 }
+                reader.Close();
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex); // Imprimir el error en la consola
+                MessageBox.Show("Error: " + ex.Message);
             }
             finally
             {
-                cmd.Dispose();
+                if (Miconexion.conexion.State == ConnectionState.Open)
+                {
+                    Miconexion.conexion.Close();
+                }
             }
 
-            return resultados;
+            return nombre;
+        }
+
+        public int ObtenerIdUsuario(string nombreUsuario, string contraseña)
+        {
+            int idUsuario = -1;
+
+            try
+            {
+                Miconexion.abrir_conexion();
+
+                SqlCommand cmd = new SqlCommand("ObtenerIdUsuario", Miconexion.conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
+                cmd.Parameters.AddWithValue("@Contrasena", contraseña);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    idUsuario = Convert.ToInt32(reader["idUsuario"]);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (Miconexion.conexion.State == ConnectionState.Open)
+                {
+                    Miconexion.conexion.Close();
+                }
+            }
+
+            return idUsuario;
         }
 
         public static void AgregarEquipo(string nomEquipo)
@@ -119,11 +156,6 @@ namespace QuinielaSprint1.Modelos
             {
                 MessageBox.Show("Error al insertar resultado: " + ex.Message);
             }
-
         }
-
-        
-
-
     }
 }
