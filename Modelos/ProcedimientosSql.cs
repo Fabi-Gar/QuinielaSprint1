@@ -92,7 +92,7 @@ namespace QuinielaSprint1.Modelos
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "AgregarEquipo";
+                cmd.CommandText = "InsertarEquipo";
                 cmd.Connection = Miconexion.conexion;
 
                 cmd.Parameters.Add(new SqlParameter("@Equipo", nomEquipo));
@@ -116,13 +116,13 @@ namespace QuinielaSprint1.Modelos
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "AgregarPartido";
+                cmd.CommandText = "InsertarPartido";
                 cmd.Connection = Miconexion.conexion;
 
                 // Configuración de los parámetros
                 cmd.Parameters.Add(new SqlParameter("@Fecha", fecha));
-                cmd.Parameters.Add(new SqlParameter("@idEquipoLocal", idEquipoLocal));
-                cmd.Parameters.Add(new SqlParameter("@idEquipoVisitante", idEquipoVisitante));
+                cmd.Parameters.Add(new SqlParameter("@idLocal", idEquipoLocal));
+                cmd.Parameters.Add(new SqlParameter("@idVisitante", idEquipoVisitante));
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Partido Agregado Exitosamente");
@@ -134,7 +134,7 @@ namespace QuinielaSprint1.Modelos
 
         }
 
-        public static void InsertarResultado(string resultado, string idPartido)
+        public static void InsertarResultado(string idPartido, string idEquipoGanador, string resultado)
         {
             try
             {
@@ -142,12 +142,14 @@ namespace QuinielaSprint1.Modelos
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "AgregarResultado";
+                cmd.CommandText = "InsertarResultado";
                 cmd.Connection = Miconexion.conexion;
 
                 // Configurar parámetros
-                cmd.Parameters.Add(new SqlParameter("@Resultado", resultado));
+                
                 cmd.Parameters.Add(new SqlParameter("@idPartido", idPartido));
+                cmd.Parameters.Add(new SqlParameter("@idEquipoGanador", idEquipoGanador));
+                cmd.Parameters.Add(new SqlParameter("@Resultado", resultado));
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Resultado insertado exitosamente");
@@ -155,6 +157,84 @@ namespace QuinielaSprint1.Modelos
             catch (SqlException ex)
             {
                 MessageBox.Show("Error al insertar resultado: " + ex.Message);
+            }
+        }
+
+
+        public static void InsertarQuiniela(string idUsuario, DateTime fecha)
+        {
+            try
+            {
+                Miconexion.abrir_conexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "InsertarQuiniela";
+                cmd.Connection = Miconexion.conexion;
+
+                
+
+                cmd.Parameters.Add(new SqlParameter("@idUsuario", idUsuario));
+                cmd.Parameters.Add(new SqlParameter("@Fecha", fecha));
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Quiniela insertada exitosamente");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error al insertar quiniela: " + ex.Message);
+            }
+        }
+
+        public static void InsertarUsuario(string nombreUsuario, string contraseña, string rol)
+        {
+            try
+            {
+                Miconexion.abrir_conexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "InsertarQuiniela";
+                cmd.Connection = Miconexion.conexion;
+
+
+
+                cmd.Parameters.Add(new SqlParameter("@Usuario", nombreUsuario));
+                cmd.Parameters.Add(new SqlParameter("@Contraseña", contraseña));
+                cmd.Parameters.Add(new SqlParameter("@Rol", rol));
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Usuario Creado exitosamente");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error al crear usuario: " + ex.Message);
+            }
+        }
+
+        public static void InsertarPuntos(string idUsuario, string puntos)
+        {
+            try
+            {
+                Miconexion.abrir_conexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "InsertarQuiniela";
+                cmd.Connection = Miconexion.conexion;
+
+
+
+                cmd.Parameters.Add(new SqlParameter("@idUsuario", idUsuario));
+                cmd.Parameters.Add(new SqlParameter("@Puntos", puntos));
+             
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Usuario Creado exitosamente");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error al crear usuario: " + ex.Message);
             }
         }
     }
