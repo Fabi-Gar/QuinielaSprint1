@@ -150,7 +150,7 @@ namespace QuinielaSprint1.Controlador
                     }
                     else
                     {
-                        MessageBox.Show("Usuario o Contraseña Incorrectos");
+                        
                         vistaLogin.Show();
                     }
                 }
