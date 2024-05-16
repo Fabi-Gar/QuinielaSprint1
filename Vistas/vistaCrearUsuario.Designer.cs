@@ -33,10 +33,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.fechaUsuario = new QuinielaSprint1.Botones.RJDatePicker();
             this.btnCrearCuenta = new QuinielaSprint1.Botones.RJButton();
             this.btnSalir = new QuinielaSprint1.Botones.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -86,17 +85,17 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Contraseña";
             // 
-            // textBox1
+            // txtContraseña
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(80)))), ((int)(((byte)(81)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(126, 334);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(254, 33);
-            this.textBox1.TabIndex = 12;
+            this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(80)))), ((int)(((byte)(81)))));
+            this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtContraseña.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContraseña.ForeColor = System.Drawing.Color.White;
+            this.txtContraseña.Location = new System.Drawing.Point(126, 334);
+            this.txtContraseña.Multiline = true;
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(254, 33);
+            this.txtContraseña.TabIndex = 12;
             // 
             // label1
             // 
@@ -120,19 +119,6 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(254, 33);
             this.txtUsuario.TabIndex = 10;
-            // 
-            // fechaUsuario
-            // 
-            this.fechaUsuario.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.fechaUsuario.BorderSize = 0;
-            this.fechaUsuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaUsuario.Location = new System.Drawing.Point(126, 387);
-            this.fechaUsuario.MinimumSize = new System.Drawing.Size(4, 35);
-            this.fechaUsuario.Name = "fechaUsuario";
-            this.fechaUsuario.Size = new System.Drawing.Size(254, 35);
-            this.fechaUsuario.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(80)))), ((int)(((byte)(81)))));
-            this.fechaUsuario.TabIndex = 21;
-            this.fechaUsuario.TextColor = System.Drawing.Color.White;
             // 
             // btnCrearCuenta
             // 
@@ -181,12 +167,11 @@
             this.ClientSize = new System.Drawing.Size(522, 580);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnCrearCuenta);
-            this.Controls.Add(this.fechaUsuario);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -205,11 +190,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtUsuario;
-        public Botones.RJDatePicker fechaUsuario;
         public Botones.RJButton btnCrearCuenta;
         public Botones.RJButton btnSalir;
+        public System.Windows.Forms.TextBox txtUsuario;
+        public System.Windows.Forms.TextBox txtContraseña;
     }
 }

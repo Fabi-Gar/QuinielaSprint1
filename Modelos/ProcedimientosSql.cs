@@ -186,7 +186,7 @@ namespace QuinielaSprint1.Modelos
             }
         }
 
-        public static void InsertarUsuario(string nombreUsuario, string contraseña, string rol)
+        public static void InsertarUsuario(string nombreUsuario, string contraseña)
         {
             try
             {
@@ -194,14 +194,14 @@ namespace QuinielaSprint1.Modelos
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "InsertarQuiniela";
+                cmd.CommandText = "InsertarUsuario";
                 cmd.Connection = Miconexion.conexion;
 
 
 
                 cmd.Parameters.Add(new SqlParameter("@Usuario", nombreUsuario));
                 cmd.Parameters.Add(new SqlParameter("@Contraseña", contraseña));
-                cmd.Parameters.Add(new SqlParameter("@Rol", rol));
+                cmd.Parameters.Add(new SqlParameter("@Rol", "Usuario"));
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Usuario Creado exitosamente");

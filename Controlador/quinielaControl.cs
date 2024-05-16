@@ -68,9 +68,11 @@ namespace QuinielaSprint1.Controlador
             vistaLogin.btnIniciarSesion.Click += clickBoton;
             vistaLogin.btnCrearCuenta.Click += clickBoton;
             vistaLogin.Show();
-          
 
-            //vistaPronosticosUsuario.Show();
+
+            //vista crear usuario
+            vistaCrearUsuario.btnCrearCuenta.Click += clickBoton;
+            vistaCrearUsuario.btnSalir.Click += clickBoton;
 
             //Vista Administrador
             vistaAdministrador.btnAgregarEquipo.Click += clickBoton;
@@ -122,6 +124,25 @@ namespace QuinielaSprint1.Controlador
                     new vistaCrearUsuario();
                 }
                 vistaCrearUsuario.ShowDialog();
+            }
+
+            if(sender == vistaCrearUsuario.btnCrearCuenta)
+            {
+                if (vistaCrearUsuario.txtUsuario.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar un nombre de usuario");
+                }
+
+                else if  (vistaCrearUsuario.txtContraseña.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar una contraseña");
+                }
+
+                else
+                {
+                    ProcedimientosSql.InsertarUsuario(vistaCrearUsuario.txtUsuario.Text, vistaCrearUsuario.txtUsuario.Text);
+                }
+                
             }
 
             // Inicia Sesion y muestra la ventana segun el rol del usuario
