@@ -45,7 +45,7 @@ namespace QuinielaSprint1.Modelos
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
-                    cmd.Parameters.AddWithValue("@Contrasena", contraseña);
+                    cmd.Parameters.AddWithValue("@Contraseña", contraseña);
 
                     SqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
