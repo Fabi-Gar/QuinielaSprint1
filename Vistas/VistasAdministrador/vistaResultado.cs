@@ -32,7 +32,7 @@ namespace QuinielaSprint1.Vistas.VistasAdicionales
 
         private void btnGenerarResultado_Click(object sender, EventArgs e)
         {
-            ProcedimientosSql.InsertarResultado(txtIdEquipo.Text,txtIdEquipo.Text,txtResultado.Text);
+            ProcedimientosSql.InsertarResultado(txtIdEquipo.Text,txtIdEquipo.Text,txtResultado.Text,txtGolesLocales.Text,txtGolesVisitante.Text);
             obtenerTablas datos1 = new obtenerTablas();
             DataTable dataTable1 = datos1.TablaResultadosConEquipos();
             dtListaResultados.DataSource = dataTable1;

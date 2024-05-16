@@ -35,11 +35,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtListaUsuarios = new System.Windows.Forms.DataGridView();
+            this.dtMisPuntos = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dtListaUsuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dtQuinielas = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dtMisPuntos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtQuinielas)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,9 +53,9 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Mis Puntos";
             // 
-            // dtListaUsuarios
+            // dtMisPuntos
             // 
-            this.dtListaUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(51)))));
+            this.dtMisPuntos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(51)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(183)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -63,8 +63,8 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(154)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtListaUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtMisPuntos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtMisPuntos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -72,12 +72,12 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(216)))), ((int)(((byte)(227)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtListaUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtListaUsuarios.EnableHeadersVisualStyles = false;
-            this.dtListaUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(216)))), ((int)(((byte)(227)))));
-            this.dtListaUsuarios.Location = new System.Drawing.Point(12, 44);
-            this.dtListaUsuarios.Name = "dtListaUsuarios";
-            this.dtListaUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dtMisPuntos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtMisPuntos.EnableHeadersVisualStyles = false;
+            this.dtMisPuntos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(216)))), ((int)(((byte)(227)))));
+            this.dtMisPuntos.Location = new System.Drawing.Point(12, 44);
+            this.dtMisPuntos.Name = "dtMisPuntos";
+            this.dtMisPuntos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(183)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -85,10 +85,10 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(154)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtListaUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dtListaUsuarios.RowHeadersVisible = false;
-            this.dtListaUsuarios.Size = new System.Drawing.Size(471, 76);
-            this.dtListaUsuarios.TabIndex = 5;
+            this.dtMisPuntos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtMisPuntos.RowHeadersVisible = false;
+            this.dtMisPuntos.Size = new System.Drawing.Size(471, 76);
+            this.dtMisPuntos.TabIndex = 5;
             // 
             // label2
             // 
@@ -101,9 +101,9 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Mis Pronosticos";
             // 
-            // dataGridView1
+            // dtQuinielas
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(51)))));
+            this.dtQuinielas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(51)))));
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(183)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,8 +111,8 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(154)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtQuinielas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtQuinielas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -120,12 +120,12 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(216)))), ((int)(((byte)(227)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(216)))), ((int)(((byte)(227)))));
-            this.dataGridView1.Location = new System.Drawing.Point(16, 270);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dtQuinielas.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dtQuinielas.EnableHeadersVisualStyles = false;
+            this.dtQuinielas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(216)))), ((int)(((byte)(227)))));
+            this.dtQuinielas.Location = new System.Drawing.Point(16, 270);
+            this.dtQuinielas.Name = "dtQuinielas";
+            this.dtQuinielas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(183)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -133,10 +133,10 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(149)))), ((int)(((byte)(154)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1030, 330);
-            this.dataGridView1.TabIndex = 7;
+            this.dtQuinielas.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dtQuinielas.RowHeadersVisible = false;
+            this.dtQuinielas.Size = new System.Drawing.Size(1030, 330);
+            this.dtQuinielas.TabIndex = 7;
             // 
             // vistaMisPuntosUsuario
             // 
@@ -145,14 +145,15 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1058, 612);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtQuinielas);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dtListaUsuarios);
+            this.Controls.Add(this.dtMisPuntos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "vistaMisPuntosUsuario";
             this.Text = "vistaMisPuntosUsuario";
-            ((System.ComponentModel.ISupportInitialize)(this.dtListaUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.vistaMisPuntosUsuario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtMisPuntos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtQuinielas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,8 +162,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.DataGridView dtListaUsuarios;
+        public System.Windows.Forms.DataGridView dtMisPuntos;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dtQuinielas;
     }
 }

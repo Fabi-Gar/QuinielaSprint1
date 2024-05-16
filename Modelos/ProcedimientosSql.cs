@@ -137,7 +137,7 @@ namespace QuinielaSprint1.Modelos
 
         }
 
-        public static void InsertarResultado(string idPartido, string idEquipoGanador, string resultado)
+        public static void InsertarResultado(string idPartido, string idEquipoGanador, string resultado, string GolesLocal,string GolesVisitante)
         {
             try
             {
@@ -145,7 +145,7 @@ namespace QuinielaSprint1.Modelos
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "InsertarResultado";
+                cmd.CommandText = "IngresarResultadoPartido";
                 cmd.Connection = Miconexion.conexion;
 
                 // Configurar parámetros
@@ -153,6 +153,8 @@ namespace QuinielaSprint1.Modelos
                 cmd.Parameters.Add(new SqlParameter("@idPartido", idPartido));
                 cmd.Parameters.Add(new SqlParameter("@idEquipoGanador", idEquipoGanador));
                 cmd.Parameters.Add(new SqlParameter("@Resultado", resultado));
+                cmd.Parameters.Add(new SqlParameter("@GolesLocal", GolesLocal));
+                cmd.Parameters.Add(new SqlParameter("@GolesVisitante", GolesVisitante));
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Resultado insertado exitosamente");
@@ -164,30 +166,6 @@ namespace QuinielaSprint1.Modelos
         }
 
 
-        public static void InsertarQuiniela(string idUsuario, DateTime fecha)
-        {
-            try
-            {
-                Miconexion.abrir_conexion();
-
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "InsertarQuiniela";
-                cmd.Connection = Miconexion.conexion;
-
-                
-
-                cmd.Parameters.Add(new SqlParameter("@idUsuario", idUsuario));
-                cmd.Parameters.Add(new SqlParameter("@Fecha", fecha));
-
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Quiniela insertada exitosamente");
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Error al insertar quiniela: " + ex.Message);
-            }
-        }
 
         public static void InsertarUsuario(string nombreUsuario, string contraseña)
         {
@@ -239,6 +217,33 @@ namespace QuinielaSprint1.Modelos
             {
                 MessageBox.Show("Error al crear usuario: " + ex.Message);
             }
+        }
+
+        public static void AgregarQuiniela(string idPartido, string equipoPronostico, string resultadoPronostico)
+        {
+            try
+            {
+                Miconexion.abrir_conexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "InsertarQuinielaYDetalles";
+                cmd.Connection = Miconexion.conexion;
+
+                // Configuración de los parámetros
+                cmd.Parameters.Add(new SqlParameter("@idUsuario", logicaDeNegocios.DatosUsuario.Id));
+                cmd.Parameters.Add(new SqlParameter("@idPartido", idPartido));
+                cmd.Parameters.Add(new SqlParameter("@EquipoPronostico", equipoPronostico));
+                cmd.Parameters.Add(new SqlParameter("@ResultadoPronostico", resultadoPronostico));
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Quiniela Agregada Exitosamente");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Algo salió mal " + ex.Message);
+            }
+
         }
     }
 }

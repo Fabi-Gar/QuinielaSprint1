@@ -45,6 +45,10 @@
             this.dtListaResultados = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.txtIdEquipo = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtGolesLocales = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtGolesVisitante = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtListaUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtListaResultados)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +69,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(13, 290);
+            this.label3.Location = new System.Drawing.Point(13, 345);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 20);
             this.label3.TabIndex = 32;
@@ -76,7 +80,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(13, 17);
+            this.label2.Location = new System.Drawing.Point(13, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 20);
             this.label2.TabIndex = 31;
@@ -88,7 +92,7 @@
             this.txtIdPartido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdPartido.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.txtIdPartido.ForeColor = System.Drawing.Color.White;
-            this.txtIdPartido.Location = new System.Drawing.Point(17, 40);
+            this.txtIdPartido.Location = new System.Drawing.Point(17, 28);
             this.txtIdPartido.Multiline = true;
             this.txtIdPartido.Name = "txtIdPartido";
             this.txtIdPartido.Size = new System.Drawing.Size(243, 33);
@@ -105,7 +109,7 @@
             this.btnGenerarResultado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarResultado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarResultado.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarResultado.Location = new System.Drawing.Point(281, 270);
+            this.btnGenerarResultado.Location = new System.Drawing.Point(281, 297);
             this.btnGenerarResultado.Name = "btnGenerarResultado";
             this.btnGenerarResultado.Size = new System.Drawing.Size(215, 40);
             this.btnGenerarResultado.TabIndex = 29;
@@ -119,7 +123,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 153);
+            this.label1.Location = new System.Drawing.Point(13, 141);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 20);
             this.label1.TabIndex = 28;
@@ -131,7 +135,7 @@
             this.txtResultado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.txtResultado.ForeColor = System.Drawing.Color.White;
-            this.txtResultado.Location = new System.Drawing.Point(17, 176);
+            this.txtResultado.Location = new System.Drawing.Point(17, 164);
             this.txtResultado.Multiline = true;
             this.txtResultado.Name = "txtResultado";
             this.txtResultado.Size = new System.Drawing.Size(243, 33);
@@ -161,7 +165,7 @@
             this.dtListaUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtListaUsuarios.EnableHeadersVisualStyles = false;
             this.dtListaUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(216)))), ((int)(((byte)(227)))));
-            this.dtListaUsuarios.Location = new System.Drawing.Point(17, 316);
+            this.dtListaUsuarios.Location = new System.Drawing.Point(17, 368);
             this.dtListaUsuarios.Name = "dtListaUsuarios";
             this.dtListaUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -174,7 +178,7 @@
             this.dtListaUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtListaUsuarios.RowHeadersVisible = false;
             this.dtListaUsuarios.RowHeadersWidth = 1030;
-            this.dtListaUsuarios.Size = new System.Drawing.Size(479, 279);
+            this.dtListaUsuarios.Size = new System.Drawing.Size(479, 227);
             this.dtListaUsuarios.TabIndex = 37;
             // 
             // dtListaResultados
@@ -222,7 +226,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(13, 87);
+            this.label4.Location = new System.Drawing.Point(13, 75);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(139, 20);
             this.label4.TabIndex = 40;
@@ -234,11 +238,57 @@
             this.txtIdEquipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdEquipo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.txtIdEquipo.ForeColor = System.Drawing.Color.White;
-            this.txtIdEquipo.Location = new System.Drawing.Point(17, 110);
+            this.txtIdEquipo.Location = new System.Drawing.Point(17, 98);
             this.txtIdEquipo.Multiline = true;
             this.txtIdEquipo.Name = "txtIdEquipo";
             this.txtIdEquipo.Size = new System.Drawing.Size(243, 33);
             this.txtIdEquipo.TabIndex = 39;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(13, 212);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 20);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "Goles Local";
+            // 
+            // txtGolesLocales
+            // 
+            this.txtGolesLocales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(80)))), ((int)(((byte)(81)))));
+            this.txtGolesLocales.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtGolesLocales.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.txtGolesLocales.ForeColor = System.Drawing.Color.White;
+            this.txtGolesLocales.Location = new System.Drawing.Point(17, 235);
+            this.txtGolesLocales.Multiline = true;
+            this.txtGolesLocales.Name = "txtGolesLocales";
+            this.txtGolesLocales.Size = new System.Drawing.Size(243, 33);
+            this.txtGolesLocales.TabIndex = 43;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(13, 274);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(114, 20);
+            this.label7.TabIndex = 42;
+            this.label7.Text = "Goles Visitante";
+            // 
+            // txtGolesVisitante
+            // 
+            this.txtGolesVisitante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(80)))), ((int)(((byte)(81)))));
+            this.txtGolesVisitante.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtGolesVisitante.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.txtGolesVisitante.ForeColor = System.Drawing.Color.White;
+            this.txtGolesVisitante.Location = new System.Drawing.Point(17, 297);
+            this.txtGolesVisitante.Multiline = true;
+            this.txtGolesVisitante.Name = "txtGolesVisitante";
+            this.txtGolesVisitante.Size = new System.Drawing.Size(243, 33);
+            this.txtGolesVisitante.TabIndex = 41;
             // 
             // vistaResultado
             // 
@@ -246,6 +296,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1058, 612);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtGolesLocales);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtGolesVisitante);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtIdEquipo);
             this.Controls.Add(this.dtListaResultados);
@@ -281,5 +335,9 @@
         public System.Windows.Forms.DataGridView dtListaResultados;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox txtIdEquipo;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox txtGolesLocales;
+        private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TextBox txtGolesVisitante;
     }
 }

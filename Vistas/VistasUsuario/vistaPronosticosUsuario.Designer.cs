@@ -35,6 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblEquipo = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblResultado = new System.Windows.Forms.Label();
             this.btnReiniciar = new QuinielaSprint1.Botones.RJButton();
             this.btnPerder = new QuinielaSprint1.Botones.RJButton();
             this.btnEmpate = new QuinielaSprint1.Botones.RJButton();
@@ -42,8 +44,6 @@
             this.btnPronosticar = new QuinielaSprint1.Botones.RJButton();
             this.btnLocal = new QuinielaSprint1.Botones.RJButton();
             this.btnVisitante = new QuinielaSprint1.Botones.RJButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblResultado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtPartidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,6 +118,28 @@
             this.lblEquipo.Size = new System.Drawing.Size(13, 20);
             this.lblEquipo.TabIndex = 33;
             this.lblEquipo.Text = ".";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(475, 323);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(172, 20);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "¿Cual sera el resultado?";
+            // 
+            // lblResultado
+            // 
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultado.ForeColor = System.Drawing.Color.White;
+            this.lblResultado.Location = new System.Drawing.Point(475, 365);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(13, 20);
+            this.lblResultado.TabIndex = 40;
+            this.lblResultado.Text = ".";
             // 
             // btnReiniciar
             // 
@@ -217,6 +239,7 @@
             this.btnPronosticar.Text = "Pronosticar";
             this.btnPronosticar.TextColor = System.Drawing.Color.White;
             this.btnPronosticar.UseVisualStyleBackColor = false;
+            this.btnPronosticar.Click += new System.EventHandler(this.btnPronosticar_Click);
             // 
             // btnLocal
             // 
@@ -257,28 +280,6 @@
             this.btnVisitante.TextColor = System.Drawing.Color.White;
             this.btnVisitante.UseVisualStyleBackColor = false;
             this.btnVisitante.Click += new System.EventHandler(this.btnVisitante_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(475, 323);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(172, 20);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "¿Cual sera el resultado?";
-            // 
-            // lblResultado
-            // 
-            this.lblResultado.AutoSize = true;
-            this.lblResultado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultado.ForeColor = System.Drawing.Color.White;
-            this.lblResultado.Location = new System.Drawing.Point(475, 365);
-            this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(13, 20);
-            this.lblResultado.TabIndex = 40;
-            this.lblResultado.Text = ".";
             // 
             // vistaPronosticosUsuario
             // 

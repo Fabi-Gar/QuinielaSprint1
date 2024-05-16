@@ -13,7 +13,7 @@ namespace QuinielaSprint1.Modelos
 
             public static string Usuario { get; set; }
             public static string Rol { get; set; }
-            public static string Id { get; set; }
+            public static int Id { get; set; }
 
         }
     }

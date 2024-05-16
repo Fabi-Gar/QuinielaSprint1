@@ -140,7 +140,7 @@ namespace QuinielaSprint1.Controlador
 
                 else
                 {
-                    ProcedimientosSql.InsertarUsuario(vistaCrearUsuario.txtUsuario.Text, vistaCrearUsuario.txtUsuario.Text);
+                    ProcedimientosSql.InsertarUsuario(vistaCrearUsuario.txtUsuario.Text, vistaCrearUsuario.txtContraseña.Text);
                 }
                 
             }
@@ -156,8 +156,9 @@ namespace QuinielaSprint1.Controlador
                 if (estadoConexion == System.Data.ConnectionState.Open)
                 {
                     logicaDeNegocios.DatosUsuario.Usuario = vistaLogin.txtUsuario.Text;
-                    procedimientosAlmacenados.ObtenerIdUsuario(vistaLogin.txtUsuario.Text, vistaLogin.txtUsuario.Text);
-                   
+                    logicaDeNegocios.DatosUsuario.Id = procedimientosAlmacenados.ObtenerIdUsuario(vistaLogin.txtUsuario.Text, vistaLogin.txtContraseña.Text);
+
+
                     logicaDeNegocios.DatosUsuario.Rol = Conexiones.Miconexion.Log_in(vistaLogin.txtUsuario.Text, vistaLogin.txtContraseña.Text);
 
 

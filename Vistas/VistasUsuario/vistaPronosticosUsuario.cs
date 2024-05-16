@@ -22,8 +22,9 @@ namespace QuinielaSprint1.Vistas.VistasUsuario
 
         }
 
-        int Equipo = 0;
-        int Resultado = 0;
+        string Equipo = "";
+        string Resultado = "";
+        string idPartido = "";
 
         private void btnLocal_Click(object sender, EventArgs e)
         {
@@ -34,15 +35,15 @@ namespace QuinielaSprint1.Vistas.VistasUsuario
                 DataGridViewRow row = dtPartidos.SelectedRows[0];
 
                 // Obtener el valor de la columna 0 (ID)
-                string id = row.Cells[0].Value.ToString();
+                string equipo = row.Cells[1].Value.ToString();
 
                 // Mostrar el valor en un MessageBox (solo para demostración)
-                lblEquipo.Text = id;
+                lblEquipo.Text = equipo;
 
                 btnVisitante.Enabled = false;
                 btnLocal.Enabled = false;
 
-                Equipo = 1;
+                Equipo = equipo;
                 
             }
             else
@@ -63,15 +64,17 @@ namespace QuinielaSprint1.Vistas.VistasUsuario
                 DataGridViewRow row = dtPartidos.SelectedRows[0];
 
                 // Obtener el valor de la columna 0 (ID)
-                string id = row.Cells[2].Value.ToString();
+                string equipo = row.Cells[3].Value.ToString();
 
                 // Mostrar el valor en un MessageBox (solo para demostración)
-                lblEquipo.Text = id;
+                lblEquipo.Text = equipo;
 
                 btnLocal.Enabled = false;
                 btnVisitante.Enabled = false;
 
-                Equipo = 3;
+                Equipo = equipo;
+
+
             }
             else
             {
@@ -84,29 +87,29 @@ namespace QuinielaSprint1.Vistas.VistasUsuario
 
         private void btnGanador_Click(object sender, EventArgs e)
         {
-            lblResultado.Text = "Ganador";
+            lblResultado.Text = "victoria";
             btnGanador.Enabled = false;
             btnEmpate.Enabled = false;
             btnPerder.Enabled = false;
-            Resultado = 1;
+            Resultado = lblResultado.Text;
         }
 
         private void btnEmpate_Click(object sender, EventArgs e)
         {
-            lblResultado.Text = "Empate";
+            lblResultado.Text = "empate";
             btnGanador.Enabled = false;
             btnEmpate.Enabled = false;
             btnPerder.Enabled = false;
-            Resultado = 2;
+            Resultado = lblResultado.Text;
         }
 
         private void btnPerder_Click(object sender, EventArgs e)
         {
-            lblResultado.Text = "Perdedor";
+            lblResultado.Text = "derrota";
             btnGanador.Enabled = false;
             btnEmpate.Enabled = false;
             btnPerder.Enabled = false;
-            Resultado = 3;
+            Resultado = lblResultado.Text;
         }
 
         private void btnReiniciar_Click(object sender, EventArgs e)
@@ -120,8 +123,8 @@ namespace QuinielaSprint1.Vistas.VistasUsuario
             lblEquipo.Text = ".";
             lblResultado.Text = ".";
 
-            Resultado = 0;
-            Equipo = 0;
+            Resultado = "";
+            Equipo = "";
 
         }
 
@@ -130,6 +133,31 @@ namespace QuinielaSprint1.Vistas.VistasUsuario
             obtenerTablas datos = new obtenerTablas();
             DataTable dataTable = datos.TablaPartidos();
             dtPartidos.DataSource = dataTable;
+        }
+
+        private void btnPronosticar_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay alguna fila seleccionada
+            if (dtPartidos.SelectedRows.Count > 0)
+            {
+                // Obtener la fila seleccionada
+                DataGridViewRow row = dtPartidos.SelectedRows[0];
+
+                // Obtener el valor de la columna 0 (ID)
+                string idPartidos = row.Cells[0].Value.ToString();
+
+
+                idPartido = idPartidos;
+
+
+                ProcedimientosSql.AgregarQuiniela(idPartido, Equipo, Resultado);
+
+            }
+            else
+            {
+                // Si no hay filas seleccionadas, mostrar un mensaje
+                MessageBox.Show("no se pudo realizar la quiniela");
+            }
         }
     }
 }

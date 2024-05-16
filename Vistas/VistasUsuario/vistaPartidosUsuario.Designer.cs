@@ -72,7 +72,7 @@
             this.dtPartidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtPartidos.RowHeadersVisible = false;
             this.dtPartidos.RowHeadersWidth = 1030;
-            this.dtPartidos.Size = new System.Drawing.Size(369, 549);
+            this.dtPartidos.Size = new System.Drawing.Size(1034, 549);
             this.dtPartidos.TabIndex = 28;
             // 
             // vistaPartidosUsuario
