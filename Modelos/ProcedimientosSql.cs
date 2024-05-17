@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static QuinielaSprint1.Modelos.Conexiones;
 using System.Security.Cryptography;
-using System.Text;
+
 
 
 namespace QuinielaSprint1.Modelos
