@@ -40,7 +40,7 @@ namespace QuinielaSprint1.Modelos
 
         public DataTable TablaPartidos()
         {
-            DataTable tablaCuentas = new DataTable();
+            DataTable tablaPartidos = new DataTable();
             try
             {
                 Miconexion.abrir_conexion();
@@ -52,7 +52,7 @@ namespace QuinielaSprint1.Modelos
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
-                adapter.Fill(tablaCuentas);
+                adapter.Fill(tablaPartidos);
                 Miconexion.conexion.Close();
             }
             catch (SqlException ex)
@@ -60,13 +60,13 @@ namespace QuinielaSprint1.Modelos
                 MessageBox.Show("Algo salió mal: " + ex.Message);
             }
 
-            return tablaCuentas;
+            return tablaPartidos;
 
         }
 
         public DataTable TablaEquipos()
         {
-            DataTable tablaCuentas = new DataTable();
+            DataTable tablaEquipos = new DataTable();
             try
             {
                 Miconexion.abrir_conexion();
@@ -78,7 +78,7 @@ namespace QuinielaSprint1.Modelos
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
-                adapter.Fill(tablaCuentas);
+                adapter.Fill(tablaEquipos);
                 Miconexion.conexion.Close();
             }
             catch (SqlException ex)
@@ -86,15 +86,15 @@ namespace QuinielaSprint1.Modelos
                 MessageBox.Show("Algo salió mal: " + ex.Message);
             }
 
-            return tablaCuentas;
+            return tablaEquipos;
 
         }
 
-        
+
 
         public DataTable TablaResultadosConEquipos()
         {
-            DataTable tablaCuentas = new DataTable();
+            DataTable tablaResultados = new DataTable();
             try
             {
                 Miconexion.abrir_conexion();
@@ -106,7 +106,7 @@ namespace QuinielaSprint1.Modelos
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
-                adapter.Fill(tablaCuentas);
+                adapter.Fill(tablaResultados);
                 Miconexion.conexion.Close();
             }
             catch (SqlException ex)
@@ -114,27 +114,29 @@ namespace QuinielaSprint1.Modelos
                 MessageBox.Show("Algo salió mal: " + ex.Message);
             }
 
-            return tablaCuentas;
+            return tablaResultados;
 
         }
 
-        
 
-        public DataTable TablaTodosLosPronosticos()
+
+        public DataTable TablaQuinielasPorUsuario()
         {
-            DataTable tablaCuentas = new DataTable();
+            DataTable tablaPronosticos = new DataTable();
             try
             {
                 Miconexion.abrir_conexion();
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "MostrarPronosticos";
+                cmd.CommandText = "VerQuinielasPorUsuario";
                 cmd.Connection = Miconexion.conexion;
+
+                cmd.Parameters.AddWithValue("@idUsuario", logicaDeNegocios.DatosUsuario.Id);
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
-                adapter.Fill(tablaCuentas);
+                adapter.Fill(tablaPronosticos);
                 Miconexion.conexion.Close();
             }
             catch (SqlException ex)
@@ -142,7 +144,7 @@ namespace QuinielaSprint1.Modelos
                 MessageBox.Show("Algo salió mal: " + ex.Message);
             }
 
-            return tablaCuentas;
+            return tablaPronosticos;
 
         }
 
@@ -174,7 +176,7 @@ namespace QuinielaSprint1.Modelos
 
         public DataTable TablaPuntosUsuario()
         {
-            DataTable tablaQuinielas = new DataTable();
+            DataTable TablaPuntosUsuario = new DataTable();
             try
             {
                 Miconexion.abrir_conexion();
@@ -189,7 +191,7 @@ namespace QuinielaSprint1.Modelos
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
-                adapter.Fill(tablaQuinielas);
+                adapter.Fill(TablaPuntosUsuario);
                 Miconexion.conexion.Close();
             }
             catch (SqlException ex)
@@ -197,27 +199,24 @@ namespace QuinielaSprint1.Modelos
                 MessageBox.Show("Algo salió mal: " + ex.Message);
             }
 
-            return tablaQuinielas;
+            return TablaPuntosUsuario;
         }
 
-        public DataTable TablaQuinielasPorUsuario()
+        public DataTable todasLasQuinielasRealizadas()
         {
-            DataTable tablaQuinielas = new DataTable();
+            DataTable tablaCuentas = new DataTable();
             try
             {
                 Miconexion.abrir_conexion();
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "VerQuinielasPorUsuario";
+                cmd.CommandText = "VerDetallesQuinielas";
                 cmd.Connection = Miconexion.conexion;
-
-                // Agregar el parámetro @idUsuario al comando
-                cmd.Parameters.AddWithValue("@idUsuario", logicaDeNegocios.DatosUsuario.Id);
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
-                adapter.Fill(tablaQuinielas);
+                adapter.Fill(tablaCuentas);
                 Miconexion.conexion.Close();
             }
             catch (SqlException ex)
@@ -225,7 +224,9 @@ namespace QuinielaSprint1.Modelos
                 MessageBox.Show("Algo salió mal: " + ex.Message);
             }
 
-            return tablaQuinielas;
+            return tablaCuentas;
+
         }
+
     }
 }

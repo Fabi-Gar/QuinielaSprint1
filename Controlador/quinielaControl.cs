@@ -174,11 +174,12 @@ namespace QuinielaSprint1.Controlador
                     {
                         
                         vistaLogin.Show();
+                        MessageBox.Show("Usuario o contraseña incorrectos");
                     }
                 }
                 else
                 {
-                    Application.Exit();
+                    
                 }
             
             }

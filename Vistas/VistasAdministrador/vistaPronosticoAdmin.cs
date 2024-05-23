@@ -21,7 +21,7 @@ namespace QuinielaSprint1.Vistas.VistasAdicionales
         private void vistaPronosticoAdmin_Load(object sender, EventArgs e)
         {
             obtenerTablas datos = new obtenerTablas();
-            DataTable dataTable = datos.TablaTodosLosPronosticos();
+            DataTable dataTable = datos.todasLasQuinielasRealizadas();
             dtPronosticos.DataSource = dataTable;
         }
     }
